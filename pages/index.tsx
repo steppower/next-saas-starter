@@ -93,3 +93,14 @@ export async function getStaticProps() {
     },
   };
 }
+
+window.addEventListener('load', function () {
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    if (urlParams.has('url')) {
+        const url = urlParams.get('url');
+        window.location.replace(url);
+    }
+})
